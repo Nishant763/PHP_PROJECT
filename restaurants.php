@@ -1,3 +1,11 @@
+<?php 
+
+  session_start();
+
+  if(!isset($_SESSION['username'])){
+    header('location:login.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,17 +31,18 @@
       <nav>
         <div class="main">
           <ul class="main-list">
-            <li class="main-list-item"><a href="index.html">Home</a></li>
+            <li class="main-list-item"><a href="index.php">Home</a></li>
             <li class="main-list-item">
-              <a href="famousplaces.html">Famous Places</a>
+              <a href="famousplaces.php">Famous Places</a>
             </li>
             <li class="active main-list-item">
-              <a href="restaurants.html">Restaurants</a>
+              <a href="restaurants.php">Restaurants</a>
             </li>
-            <li class="main-list-item"><a href="stops.html">Bus Stops</a></li>
+            <li class="main-list-item"><a href="stops.php">Bus Stops</a></li>
             <li class="main-list-item">
-              <a href="hospitals.html">Hospitals</a>
+              <a href="hospitals.php">Hospitals</a>
             </li>
+            <li class="main-list-item"><a href="logout.php">Logout</a></li>
           </ul>
         </div>
       </nav>

@@ -1,5 +1,16 @@
+<?php 
+
+  session_start();
+
+  if(!isset($_SESSION['username'])){
+    header('location:login.php');
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
+
 
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
@@ -19,11 +30,12 @@
       <div class="main">
         
         <ul class="main-list">
-          <li class="active main-list-item"><a href="index.html">Home</a></li>
-          <li class="main-list-item"><a href="famousplaces.html">Famous Places</a></li>
-          <li class="main-list-item"><a href="restaurants.html">Restaurants</a></li>
-          <li class="main-list-item"><a href="stops.html">Bus Stops</a></li>
-          <li class="main-list-item"><a href="hospitals.html">Hospitals</a></li>
+          <li class="active main-list-item"><a href="index.php">Home</a></li>
+          <li class="main-list-item"><a href="famousplaces.php">Famous Places</a></li>
+          <li class="main-list-item"><a href="restaurants.php">Restaurants</a></li>
+          <li class="main-list-item"><a href="stops.php">Bus Stops</a></li>
+          <li class="main-list-item"><a href="hospitals.php">Hospitals</a></li>
+          <li class="main-list-item"><a href="logout.php">Logout</a></li>
         </ul>
       </div>
     </nav>
@@ -31,7 +43,13 @@
 
     <!-- Title heading -->
     <div class="title">
-      <span class="heading">Welcome To Mumbai</span>
+      <span class="heading">Hi! 
+        
+      <?php echo $_SESSION['username']; ?><br>
+        Welcome To Mumbai
+    
+    
+      </span>
     </div>
   </header>
   <!-- // Title heading -->
